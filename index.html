@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview web design</title>
+  <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
+  <!-- css link  -->
+  <link rel="stylesheet" href="style/style.css">
+
+
+</head>
+<body>
+  <header>
+    <section class="header-bg">
+      <div class="container-header">
+        <nav>
+          <a class="logo" href="#">INTERVIEW</a>
+          <a class="burger " href="#" onclick="intro()">MENU</a>
+        </nav>
+      </div>
+    </section>
+    <section class="header-menu">
+      <div class="container-header">
+        <nav>
+          <a class="logo"  href="#">INTERVIEW</a>
+          <a class="burgerk"  href="#444">MENU</a>
+        </nav>
+        <div class="menu">
+          <div class="menu-item">
+            <a href="#" class="menu-item-link">About</a>
+            <img class="menu-item-img"  src="images/menu-img-4.jpg" alt="menu-img-one">
+            <div class="marquee">
+              <div class="marquee-inner">
+                <span>About - About - About - About - About - About - About </span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="#" class="menu-item-link">Projects</a>
+            <img class="menu-item-img" src="images/menu-img-1.png" alt="menu-img-two">
+            <div class="marquee">
+              <div class="marquee-inner">
+                <span>Projects - Projects - Projects - Projects - Projects - Projects - Projects </span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="#" class="menu-item-link">Clients</a>
+            <img class="menu-item-img"  src="images/menu-img-2.png" alt="menu-img-one">
+            <div class="marquee">
+              <div class="marquee-inner">
+                <span>Clients - Clients - Clients - Clients - Clients - Clients - Clients </span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="#" class="menu-item-link">Contact</a>
+            <img class="menu-item-img"  src="images/menu-img-3.png" alt="menu-img-one">
+            <div class="marquee">
+              <div class="marquee-inner">
+                <span>Contact - Contact - Contact - Contact - Contact - Contact - Contact </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </header>
+  <div class='section-2'>
+    <div class="section-2-top">
+      <img src="./images/section1.jpg" alt="">
+      <div class="section-top-content">
+        <h1>Special Photography Studio Based in Berlin, Germany</h1>
+        <p>Always taking great pleasure in the work we do, we find satisfaction in the simple acts of thinking and making. Since 2005, we’ve worked to build strategies and craft solutions for our collaborators, applying reason and rationality to the process of design.</p>
+        <a href="#">About us </a>
+      </div>
+    </div>
+    <div class="section-2-right">
+      <img  src="./images/section2.jpg" alt="img">
+    </div>
+
+  </div>
+  <div class="section-3">
+    <div class="tion-3-left">
+      <div class="tion-3-left-content">
+        <h3 class="featured">Featured Project</h3>
+        <h1 class="featured-title">Project title</h1>
+        <p class="featured-paragrf">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a class="featured-link" href="">View Project</a>
+      </div>
+
+    </div>
+    <img  class="tion-3-right" src="./images/section-3-bg.png" alt="">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
+  <script>
+    let tl = gsap.timeline({ paused: true });
+    tl.to(".header-menu", 1, {
+				left: 0,
+				ease: Expo.easeInOut,
+			});
+    tl.staggerFrom(
+					".menu > div",
+					0.8,
+					{ y: 100, opacity: 0, ease: Expo.easeOut },
+					"0.1",
+					"-=0.4"
+				);
+
+      tl.reverse();
+
+
+      function intro() {
+
+	return tl.play();
+
+}
+
+document.querySelector(".burgerk").addEventListener('click',()=>{
+  return tl.reversed( !tl.reversed() );
+})
+
+  </script>
+</body>
+</html>
